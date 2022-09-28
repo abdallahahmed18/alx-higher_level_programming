@@ -1,15 +1,7 @@
 #!/usr/bin/python3
-
-"""Module to return object from JSON data"""
-
+"""Defines a Python class-to-JSON function."""
 
 
-
-
-def from_json_string(my_str):
-
-        '''Returns python object form JSON'''
-
-            import json
-
-                return json.loads(my_str)
+def class_to_json(obj):
+    """Return the dictionary represntation of a simple data structure."""
+    return obj.__dict__ 
