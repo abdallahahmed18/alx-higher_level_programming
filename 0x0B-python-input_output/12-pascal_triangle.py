@@ -1,15 +1,22 @@
 #!/usr/bin/python3
-
-"""Module to return object from JSON data"""
-
+"""Pascal's Triangle module"""
 
 
+def pascal_triangle(n):
+    """Function that returns a list of
+    lists of integers representing the
+    Pascal’s triangle of n
+    """
 
+    if n <= 0:
+        return []
 
-def from_json_string(my_str):
+    triangle = [[1]]
 
-        '''Returns python object form JSON'''
-
-            import json
-
-                return json.loads(my_str)
+    for x in range(1, n):
+        row = [1]
+        for y in range(1, x):
+            row.append(triangle[x-1][y-1] + triangle[x-1][y])
+        row.append(1)
+        triangle.append(row)
+    return triangle
